@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ssss
+  namespace: iwiick-proj-1-dev
+  annotations:
+    skyu.io/ingress.cert: private
+    skyu.io/ingress.provider: nginx
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/affinity-mode: balanced
+    nginx.ingress.kubernetes.io/backend-protocol: http
+    nginx.ingress.kubernetes.io/permanent-redirect-code: '301'
+    nginx.ingress.kubernetes.io/proxy-body-size: 500m
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+    nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
+  labels:
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    applicationId: app_88e98e76-3187-4a55-b601-f3139b98935d
+    environmentId: env_12199eed-1603-479a-9d76-0c14583d9883
+spec:
+  tls: []
+  rules:
+    - host: test.com
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: dewsara-v1-0-0
+                port:
+                  number: 4000
