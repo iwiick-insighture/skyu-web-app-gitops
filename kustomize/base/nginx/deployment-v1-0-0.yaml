@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-v1-0-0
+  labels:
+    app: nginx-v1-0-0
+    applicationId: app_8f770733-ef3d-4d2b-a4cf-f61221b8962c
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+spec:
+  selector:
+    matchLabels:
+      app: nginx-v1-0-0
+  template:
+    metadata:
+      labels:
+        app: nginx-v1-0-0
+        applicationId: app_8f770733-ef3d-4d2b-a4cf-f61221b8962c
+        version: v1.0.0
+        organizationId: org_83167af8-ae98-451b-972e-dca861896824
+        projectId: project_ef675f23-db14-4843-93c7-fc931247adba

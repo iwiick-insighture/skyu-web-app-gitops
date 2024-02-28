@@ -1,0 +1,47 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts:
+        - port: 80
+          targetPort: 80
+          protocol: TCP
+      healthChecks: []
+      name: nginx-main
+      imagePullPolicy: Always
+      imageRegistry: nginx
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: nginx
+    version: v1.0.0
+    applicationId: app_8f770733-ef3d-4d2b-a4cf-f61221b8962c
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    environmentId: env_12199eed-1603-479a-9d76-0c14583d9883
+    environmentName: dev
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: nginx
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: iwiick-proj-1-dev
