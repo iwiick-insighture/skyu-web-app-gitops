@@ -20,6 +20,8 @@ spec:
         - port: 4000
           targetPort: 80
           protocol: TCP
+          apiSpec:
+            gitPath: docs/swagger.yaml
       healthChecks: []
       name: dewsara-main
       imagePullPolicy: Always
