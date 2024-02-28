@@ -1,0 +1,49 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts:
+        - port: 4000
+          targetPort: 80
+          protocol: TCP
+      healthChecks: []
+      name: dewsara-main
+      imagePullPolicy: Always
+      imageRegistry: docker.io/nj93/sdsds
+      imagePullSecretName: imagepull-docker
+      credentialId: credential_47194304-4a17-4f70-95b4-6ecc595cfb7b
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: dewsara
+    version: v1.0.0
+    applicationId: app_88e98e76-3187-4a55-b601-f3139b98935d
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    environmentId: env_12199eed-1603-479a-9d76-0c14583d9883
+    environmentName: dev
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: dewsara
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: iwiick-proj-1-dev

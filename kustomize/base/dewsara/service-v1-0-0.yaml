@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: dewsara-v1-0-0
+    applicationId: app_88e98e76-3187-4a55-b601-f3139b98935d
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  name: dewsara-v1-0-0
+spec:
+  selector:
+    app: dewsara-v1-0-0
