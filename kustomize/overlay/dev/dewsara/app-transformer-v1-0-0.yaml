@@ -15,7 +15,13 @@ spec:
       memoryLimitMb: 450
       args: []
       command: []
-      configMounts: []
+      configMounts:
+        - configMapName: ''
+          isEnv: false
+          isFile: true
+          key: .env
+          mountPath: /src/test.json
+          secretName: test
       applicationPorts:
         - port: 4000
           targetPort: 80
