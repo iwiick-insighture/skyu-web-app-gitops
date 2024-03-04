@@ -18,7 +18,7 @@ spec:
       configMounts: []
       applicationPorts:
         - port: 4000
-          targetPort: 80
+          targetPort: 4000
           protocol: TCP
           apiSpec:
             gitPath: docs/swagger.yaml
