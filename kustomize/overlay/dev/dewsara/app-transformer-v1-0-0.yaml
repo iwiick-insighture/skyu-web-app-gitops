@@ -8,7 +8,7 @@ metadata:
         path: skyu-app-transformer
 spec:
   applicationContainers:
-    - imageTag: c8c2b13806460b411c6ca8925d040bc8ceea7b88
+    - imageTag: 5bc346cfa887c9ab7ef5139303cdc9cb13ab3a6b
       cpuRequestMili: 100
       cpuLimitMili: 150
       memoryRequestMb: 350
@@ -29,10 +29,10 @@ spec:
       imagePullSecretName: imagepull-docker
       credentialId: credential_47194304-4a17-4f70-95b4-6ecc595cfb7b
       commitDetails:
-        commitHash: c8c2b13806460b411c6ca8925d040bc8ceea7b88
+        commitHash: 5bc346cfa887c9ab7ef5139303cdc9cb13ab3a6b
         commitAvatar: https://github.com/nilesh93Insighture.png
-        commitTime: 2024-03-05T01:16:07 05:30
-        commitMessage: change api spec
+        commitTime: 2024-03-05T01:22:06 05:30
+        commitMessage: fix json
         commitUser: nilesh93Insighture
   minReplicas: 1
   maxReplicas: 1
