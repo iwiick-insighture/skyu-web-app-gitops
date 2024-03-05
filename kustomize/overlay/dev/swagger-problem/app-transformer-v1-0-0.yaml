@@ -8,7 +8,7 @@ metadata:
         path: skyu-app-transformer
 spec:
   applicationContainers:
-    - imageTag: latest
+    - imageTag: 3bdb3ab9f76eb40744713ae1213b78318bb53ca6
       cpuRequestMili: 100
       cpuLimitMili: 150
       memoryRequestMb: 350
@@ -28,6 +28,14 @@ spec:
       imageRegistry: docker.io/nj93/swagger-problem
       imagePullSecretName: imagepull-docker
       credentialId: credential_47194304-4a17-4f70-95b4-6ecc595cfb7b
+      commitDetails:
+        commitHash: 3bdb3ab9f76eb40744713ae1213b78318bb53ca6
+        commitAvatar: https://github.com/skyu-v2-dev[bot].png
+        commitTime: '2024-03-05T09:09:45Z'
+        commitMessage: >-
+          container-staging_env_b8a4413c-521f-4686-8993-4a7c64a62735_app_acfd460b-bc14-4f10-bafc-256657aed02c.yaml
+          workflow file created'
+        commitUser: skyu-v2-dev[bot]
   minReplicas: 1
   maxReplicas: 1
   terminationGracePeriodSeconds: 60
