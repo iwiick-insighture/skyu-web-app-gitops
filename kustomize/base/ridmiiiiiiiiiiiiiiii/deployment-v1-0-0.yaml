@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ridmiiiiiiiiiiiiiiii-v1-0-0
+  labels:
+    app: ridmiiiiiiiiiiiiiiii-v1-0-0
+    applicationId: app_62520c7f-ca4b-4b20-95f3-1754b22e9f8a
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  annotations:
+    reloader.stakater.com/auto: 'true'
+spec:
+  selector:
+    matchLabels:
+      app: ridmiiiiiiiiiiiiiiii-v1-0-0
+  template:
+    metadata:
+      labels:
+        app: ridmiiiiiiiiiiiiiiii-v1-0-0
+        applicationId: app_62520c7f-ca4b-4b20-95f3-1754b22e9f8a
+        version: v1.0.0
+        organizationId: org_83167af8-ae98-451b-972e-dca861896824
+        projectId: project_ef675f23-db14-4843-93c7-fc931247adba
