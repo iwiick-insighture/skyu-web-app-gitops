@@ -1,0 +1,17 @@
+apiVersion: configs.skyu.io/v1
+kind: SkyuCertificate
+metadata:
+  namespace: skyu-system
+  annotations:
+    replicator.v1.mittwald.de/replicate-to-matching: projectId=project_ef675f23-db14-4843-93c7-fc931247adba
+  labels:
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    dnsId: '62'
+  name: zvl-ful-devtest-skyu-io-certificate
+spec:
+  skyuControlPlaneAPI:
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  tlsCertRef: secret_cc0c8914-f2f6-4918-b4b5-669666c7d47a
+  tlsKeyRef: secret_7853f0d3-1a01-414e-8d35-60a2fb6ff5d3
