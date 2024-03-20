@@ -13,5 +13,5 @@ spec:
   skyuControlPlaneAPI:
     organizationId: org_83167af8-ae98-451b-972e-dca861896824
     projectId: project_ef675f23-db14-4843-93c7-fc931247adba
-  tlsCertRef: secret_cc0c8914-f2f6-4918-b4b5-669666c7d47a
-  tlsKeyRef: secret_7853f0d3-1a01-414e-8d35-60a2fb6ff5d3
+  tlsCertRef: secret_a5109fb1-2def-4b83-93ef-950d5d80ab2c
+  tlsKeyRef: secret_55b30fbd-db7f-4c41-bb0f-156ae4e80d62
