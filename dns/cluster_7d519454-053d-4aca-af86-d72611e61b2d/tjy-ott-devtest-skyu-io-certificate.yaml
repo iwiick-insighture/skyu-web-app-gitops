@@ -1,0 +1,17 @@
+apiVersion: configs.skyu.io/v1
+kind: SkyuCertificate
+metadata:
+  namespace: skyu-system
+  annotations:
+    replicator.v1.mittwald.de/replicate-to-matching: projectId=project_ef675f23-db14-4843-93c7-fc931247adba
+  labels:
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    dnsId: '64'
+  name: tjy-ott-devtest-skyu-io-certificate
+spec:
+  skyuControlPlaneAPI:
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  tlsCertRef: secret_ee456f0a-e04e-4c72-a070-285aa7b56bb3
+  tlsKeyRef: secret_e2604c95-90fd-4761-a9ec-3d44b499dddd
