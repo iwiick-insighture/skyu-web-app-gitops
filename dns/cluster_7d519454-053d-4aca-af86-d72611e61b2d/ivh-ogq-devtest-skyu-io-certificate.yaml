@@ -1,0 +1,17 @@
+apiVersion: configs.skyu.io/v1
+kind: SkyuCertificate
+metadata:
+  namespace: skyu-system
+  annotations:
+    replicator.v1.mittwald.de/replicate-to-matching: projectId=project_ef675f23-db14-4843-93c7-fc931247adba
+  labels:
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    dnsId: '48'
+  name: ivh-ogq-devtest-skyu-io-certificate
+spec:
+  skyuControlPlaneAPI:
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  tlsCertRef: secret_2d4d338f-2aa0-4cff-8d46-df9a0dacd333
+  tlsKeyRef: secret_f87c9a44-0400-48d9-b339-1cf35ba1e74e
