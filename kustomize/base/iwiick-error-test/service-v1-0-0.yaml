@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: iwiick-error-test-v1-0-0
+    applicationId: app_e4ebcfae-3c40-4b33-8f4e-186ad00280d9
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  name: iwiick-error-test-v1-0-0
+spec:
+  selector:
+    app: iwiick-error-test-v1-0-0
