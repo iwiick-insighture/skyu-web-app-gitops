@@ -1,0 +1,16 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations: {}
+  name: iwiick-app-with-secrets-v1-0-0
+  labels:
+    app: iwiick-app-with-secrets-v1-0-0
+    applicationId: app_e881a89b-65d4-478e-83f6-1e4f134ae89c
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: iwiick-app-with-secrets-v1-0-0

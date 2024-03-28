@@ -1,0 +1,45 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts: []
+      healthChecks: []
+      name: iwiick-app-with-secrets-main
+      imagePullPolicy: Always
+      imageRegistry: 272133924862.dkr.ecr.us-east-1.amazonaws.com/iwiick-app-with-secrets
+      credentialId: credential_6df4f3e2-3a1f-432b-ad29-93e6ea6051fc
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: iwiick-app-with-secrets
+    version: v1.0.0
+    applicationId: app_e881a89b-65d4-478e-83f6-1e4f134ae89c
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    environmentId: env_b8a4413c-521f-4686-8993-4a7c64a62735
+    environmentName: staging
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: iwiick-app-with-secrets
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: iwiick-proj-1-staging
