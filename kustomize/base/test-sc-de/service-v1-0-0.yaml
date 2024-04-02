@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: test-sc-de-v1-0-0
+    applicationId: app_4e78bc90-b74e-4c3b-a382-9af45ba6e6cf
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  name: test-sc-de-v1-0-0
+spec:
+  selector:
+    app: test-sc-de-v1-0-0

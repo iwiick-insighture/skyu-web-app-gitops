@@ -1,0 +1,50 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts:
+        - port: 80
+          targetPort: 80
+          protocol: TCP
+          apiSpec:
+            gitPath: Readme.txt
+      healthChecks: []
+      name: test-sc-de-main
+      imagePullPolicy: Always
+      imageRegistry: dfdf/test-sc-de
+      credentialId: credential_ef5d35a8-00e1-44a6-9abc-b921b043a1e2
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: test-sc-de
+    version: v1.0.0
+    applicationId: app_4e78bc90-b74e-4c3b-a382-9af45ba6e6cf
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    environmentId: env_12199eed-1603-479a-9d76-0c14583d9883
+    environmentName: dev
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: test-sc-de
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: iwiick-proj-1-dev
