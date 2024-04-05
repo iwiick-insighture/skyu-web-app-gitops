@@ -1,0 +1,16 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  annotations: {}
+  name: iwiick-newwww-v1-0-0
+  labels:
+    app: iwiick-newwww-v1-0-0
+    applicationId: app_94531f94-bebb-425c-bb96-b77bf38af775
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: iwiick-newwww-v1-0-0
