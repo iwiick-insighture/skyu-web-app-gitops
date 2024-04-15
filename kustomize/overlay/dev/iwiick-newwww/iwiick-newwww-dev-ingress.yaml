@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: iwiick-newwww-dev-ingress
+  namespace: iwiick-proj-1-dev
+  annotations:
+    skyu.io/ingress.cert: private
+    skyu.io/ingress.provider: nginx
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/affinity-mode: balanced
+    nginx.ingress.kubernetes.io/backend-protocol: http
+    nginx.ingress.kubernetes.io/permanent-redirect-code: '301'
+    nginx.ingress.kubernetes.io/proxy-body-size: 500m
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: route
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+    nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
+  labels:
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    applicationId: app_94531f94-bebb-425c-bb96-b77bf38af775
+    environmentId: env_12199eed-1603-479a-9d76-0c14583d9883
+spec:
+  tls:
+    - secretName: tip-boh-devtest-skyu-io-certificate
+      hosts:
+        - iwiick-newwww-dev.tip-boh.devtest.skyu.io
+  rules:
+    - host: iwiick-newwww-dev.tip-boh.devtest.skyu.io
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: iwiick-newwww-v1-0-0
+                port:
+                  number: 80
