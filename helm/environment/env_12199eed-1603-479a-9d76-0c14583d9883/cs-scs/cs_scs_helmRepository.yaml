@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: komiser-eks
+  namespace: scs
+spec:
+  interval: 1m0s
+  url: https://sanu1020.github.io/komiser-eks/

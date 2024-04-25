@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: komiser-configmap
+  namespace: scs
+data:
+  aws.arn: cdcd
+  aws.serviceaccountarn: dcdc
