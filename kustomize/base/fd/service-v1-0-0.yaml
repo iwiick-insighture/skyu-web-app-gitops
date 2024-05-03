@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations: {}
+  labels:
+    app: fd-v1-0-0
+    applicationId: app_25576efc-33ae-4d4e-96ca-c38a85d24011
+    version: v1.0.0
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+  name: fd-v1-0-0
+spec:
+  selector:
+    app: fd-v1-0-0
