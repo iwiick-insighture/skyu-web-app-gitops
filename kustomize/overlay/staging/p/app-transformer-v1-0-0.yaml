@@ -1,0 +1,45 @@
+apiVersion: transformers.customplugin.co/v1
+kind: SkyUAppTransformer
+metadata:
+  name: skyu-deployment
+  annotations:
+    config.kubernetes.io/function: |
+      exec:
+        path: skyu-app-transformer
+spec:
+  applicationContainers:
+    - imageTag: latest
+      cpuRequestMili: 100
+      cpuLimitMili: 150
+      memoryRequestMb: 350
+      memoryLimitMb: 450
+      args: []
+      command: []
+      configMounts: []
+      applicationPorts: []
+      healthChecks: []
+      name: p-main
+      imagePullPolicy: Always
+      imageRegistry: dfdf/p
+      credentialId: credential_ef5d35a8-00e1-44a6-9abc-b921b043a1e2
+  minReplicas: 1
+  maxReplicas: 1
+  terminationGracePeriodSeconds: 60
+  nodeSelector: {}
+  suspend: false
+  ttlSecondsAfterFinished: 0
+  labels:
+    app: p
+    version: v1.0.0
+    applicationId: app_567603b4-7d37-4411-b038-0c32b09836d5
+    projectId: project_ef675f23-db14-4843-93c7-fc931247adba
+    organizationId: org_83167af8-ae98-451b-972e-dca861896824
+    environmentId: env_b8a4413c-521f-4686-8993-4a7c64a62735
+    environmentName: staging
+  horizontalAutoScalingRules: []
+  volumes: []
+  type: Deployment
+  name: p
+  serviceType: ClusterIP
+  version: v1.0.0
+  namespace: iwiick-proj-1-staging
